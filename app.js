@@ -10,6 +10,9 @@ require('dotenv').config()
 //middleware 
 app.use(express.json())
 
+//express.static tells Express to serve static files from the "public" directory.
+//it allows you to serve these static files to users when they access specific routes.
+app.use(express.static('./public'))
 
 app.get('/',(req,res)=>{
     res.send("hello")
