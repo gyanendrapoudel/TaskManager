@@ -19,6 +19,13 @@ app.use('/api/v1/tasks', tasks)
 
 const port = 5000;
 
-connectDB(process.env.MONG_URI)
+const start = async ()=>{
+  try{
+      await connectDB(process.env.MONG_URI)
+      app.listen(port, console.log(`port is listening on ${port}`))
+    } catch(error){
+        console.log(error)
+    }
+}
+start();
 
-app.listen(port, console.log(`port is listening on ${port}`))
