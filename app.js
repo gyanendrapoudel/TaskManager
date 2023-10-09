@@ -22,10 +22,14 @@ const port = 5000;
 const start = async ()=>{
   try{
       await connectDB(process.env.MONG_URI)
-      app.listen(port, console.log(`port is listening on ${port}`))
+      app.listen(
+        port,
+        console.log(`port is listening on ${port}`)
+      )
     } catch(error){
         console.log(error)
     }
 }
 start();
+
 
