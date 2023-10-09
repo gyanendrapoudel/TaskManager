@@ -12,6 +12,7 @@ app.use(express.json())
 app.get('/',(req,res)=>{
     res.send("hello")
 })
+
 app.use('/api/v1/tasks', tasks)
 
 const port = 5000;
